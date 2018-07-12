@@ -73,7 +73,7 @@ class ZoomableGlobe extends Component {
     this.props.onMoveStart(currentCenter)
   }
   handleTouchStart({ touches }) {
-    if (touches.length > 1) {
+    if (touches.length === 1) {
       this.handleMouseDown(touches[0])
     }
     else {
@@ -81,7 +81,7 @@ class ZoomableGlobe extends Component {
     }
   }
   preventTouchScroll(evt) {
-    if (evt.touches.length > 1) {
+    if (evt.touches.length === 1) {
       evt.preventDefault()
     }
   }
